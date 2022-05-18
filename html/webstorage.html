@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        if(typeof(localStorage) !== undefined) {
+            //alert('browser support')
+            localStorage.setItem('firstName', 'Mark')
+            localStorage.lastName = "Smith"
+        }else{
+            alert('not compatiable')
+        }
+        
+    </script>
+</body>
+</html>
+
+<!--
+    # Web storage
+Web storage can be use to save data at client side
+this is consider to be better then cookies
+because unlike cookies the storage is far larger at least (5 MB) and the information is store 
+before local storage we store in cookies
+we can have local storage as per domain
+-->

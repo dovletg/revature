@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="mytext"></h1>
+
+    <script>
+
+        var f = localStorage.getItem('firstName')
+        var l = localStorage.lastName
+
+        document.getElementById('mytext').innerHTML = f + l
+
+        localStorage.clear()
+
+
+    </script>
+
+</body>
+</html>
+
+<!--
+    Type of web storage
+1. local storage - data with no expire date
+2. session storage - data for one session (data will lost when the browser tab is closed)
+
+
+// store data
+localstorage.setItem(key, value)
+localstorage.key = value
+-->

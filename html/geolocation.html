@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HTML 5 API - Geo location</h1>
+    <button onclick="getLocation()">Get Location</button>
+
+    <script>
+      function getLocation() {
+        if (navigator.geolocation) {
+          //alert("browser support this feature")
+          navigator.geolocation.getCurrentPosition(
+            successCallback,
+            errorCallback
+          );
+        } else {
+          alert("sorry your browser not compatiable");
+        }
+      }
+
+      function successCallback(position) {
+          console.log(position)
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        alert("Latitude: " + latitude + ", Longitude: " + longitude);
+      }
+
+      function errorCallback(error) {
+        if (error.code == 1) {
+          alert("access denied");
+        } else {
+          alert("position is unavailable");
+        }
+      }
+    </script>
+</body>
+</html>
+
+<!--
+    # Geo location
+it is used to locate the user position but since this is matter of user privacy the position is not
+available unless the user approves it
+
+the getCurrentPosition() which is used to return the user position
+this return the latitude and longitute of user position
+
+Steps:
+1. check if geolocation API is supported or not by browser
+2. if supported run the getcurrentPosition() method
+3. if successfully it retunr coordinate
+4. display or can use coordinate to find user location
+5. if deny we have handle according
+-->
